@@ -108,7 +108,6 @@ export default {
 
   &_input {
     font-weight: 400;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22px;
     border: none;
