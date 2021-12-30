@@ -1,14 +1,15 @@
 <template>
   <div class="loader_wrapper">
-    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="lds-roller"><div></div><div></div><div></div><div>
+    </div><div></div><div></div><div></div><div></div></div>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Loader'
-}
+  name: "Loader-component",
+};
 </script>
 
 <style scoped lang='scss'>
@@ -101,4 +102,4 @@ export default {
       transform: rotate(360deg);
     }
   }
-</style> 
+</style>

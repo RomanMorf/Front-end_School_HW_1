@@ -4,60 +4,60 @@ const playerMixins = {
       isPlay: false,
       isPause: false,
       loading: true,
-    }
+    };
   },
   methods: {
-    playToggle() {// переключает режим "PLAY" на "PAUSE", и наоборот
+    playToggle() {
       if (this.isPlay) {
-        this.playerPause()
+        this.playerPause();
       } else {
-        this.playerPlay()
+        this.playerPlay();
       }
     },
-    mutedToggle() {// переключает режим "MUTE" (без звука)
-      this.checkParams()
+    mutedToggle() {
+      this.checkParams();
       if (this.muted) {
-        this.$refs.video.muted = false
-        this.muted = false
-        this.$store.dispatch('SET_MUTED', false)
+        this.$refs.video.muted = false;
+        this.muted = false;
+        this.$store.dispatch("SET_MUTED", false);
       } else {
-        this.$refs.video.muted = true
-        this.muted = true
-        this.$store.dispatch('SET_MUTED', true)
+        this.$refs.video.muted = true;
+        this.muted = true;
+        this.$store.dispatch("SET_MUTED", true);
       }
     },
-    playerPlay() { // запускай проигрывание
-      this.checkParams()
-      this.$refs.video.play()
-      this.isPlay = true
-      this.isPause = false
+    playerPlay() {
+      this.checkParams();
+      this.$refs.video.play();
+      this.isPlay = true;
+      this.isPause = false;
     },
-    playerPause() { // ставит проигрыватель на паузу
-      this.checkParams()
-      this.$refs.video.pause()
-      this.isPlay = false
-      this.isPause = true
+    playerPause() {
+      this.checkParams();
+      this.$refs.video.pause();
+      this.isPlay = false;
+      this.isPause = true;
     },
-    playerStop() { // ставит проигрыватель на паузу и обнуляет счетчик времени плеера
-      this.checkParams()
-      this.$refs.video.pause()
-      this.$refs.video.currentTime = 0
-      this.isPlay = false
-      this.isPause = false
+    playerStop() {
+      this.checkParams();
+      this.$refs.video.pause();
+      this.$refs.video.currentTime = 0;
+      this.isPlay = false;
+      this.isPause = false;
     },
-    setVolume() { // устанавливает уровень громкости
-      const volumeValue = this.volume || 30
-      this.$refs.video.volume = volumeValue / 100
-      this.$store.dispatch('SET_VOLUME', volumeValue)
+    setVolume() {
+      const volumeValue = this.volume || 30;
+      this.$refs.video.volume = volumeValue / 100;
+      this.$store.dispatch("SET_VOLUME", volumeValue);
     },
-    checkParams() { // проверяет все параметры
-      this.volume = this.VOLUME || 30
-      this.muted = this.MUTED
-      this.$refs.video.volume = +this.volume / 100
-      this.$refs.video.muted = this.MUTED
+    checkParams() {
+      this.volume = this.VOLUME || 30;
+      this.muted = this.MUTED;
+      this.$refs.video.volume = +this.volume / 100;
+      this.$refs.video.muted = this.MUTED;
     },
-    hideLoader() {// прячет анимацию загрузки, после загрузки видео
-      this.loading = false
+    hideLoader() {
+      this.loading = false;
     },
   },
 };

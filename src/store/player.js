@@ -3,44 +3,44 @@ export default {
     playerInfo: {
       volume: 50,
       muted: false,
-    }
+    },
   },
 
   mutations: {
     setPlayerInfo(state, info) {
-      state.playerInfo = info
+      state.playerInfo = info;
     },
 
     setVolume(state, volume) {
-      state.playerInfo.volume = volume
+      state.playerInfo.volume = volume;
     },
     setMuted(state, muted) {
-      state.playerInfo.muted = muted
+      state.playerInfo.muted = muted;
     },
 
-    clearPlayerInfo(state, info) {
-      state.playerInfo = {}
+    clearPlayerInfo(state) {
+      state.playerInfo = {};
     },
   },
 
   actions: {
-    GET_PLAYER_INFO({ dispatch, commit, getters }) {
+    GET_PLAYER_INFO({ commit }) {
       if (localStorage.playerVolume) {
-        const volume = localStorage.getItem('playerVolume')
-        commit('setVolume', JSON.parse(volume))
+        const volume = localStorage.getItem("playerVolume");
+        commit("setVolume", JSON.parse(volume));
       }
       if (localStorage.playerMuted) {
-        const muted = localStorage.getItem('playerMuted')
-        commit('setMuted', JSON.parse(muted))
+        const muted = localStorage.getItem("playerMuted");
+        commit("setMuted", JSON.parse(muted));
       }
     },
-    SET_VOLUME ({ dispatch, commit, getters }, newValue) {
-      localStorage.setItem('playerVolume', newValue)
-      commit('setVolume', newValue)
+    SET_VOLUME({ commit }, newValue) {
+      localStorage.setItem("playerVolume", newValue);
+      commit("setVolume", newValue);
     },
-    SET_MUTED ({ dispatch, commit, getters }, muted) {
-      localStorage.setItem('playerMuted', muted)
-      commit('setMuted', muted)
+    SET_MUTED({ commit }, muted) {
+      localStorage.setItem("playerMuted", muted);
+      commit("setMuted", muted);
     },
   },
 
@@ -51,5 +51,5 @@ export default {
   },
 
   modules: {
-  }
-}
+  },
+};

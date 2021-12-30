@@ -2,10 +2,10 @@
   <div class="video">
     <div class="video_container">
       <Loader v-if="loading" />
-      <Card 
+      <Card
         v-else
-        v-for="item in TRENDING" 
-        :key="item.id" 
+        v-for="item in TRENDING"
+        :key="item.id"
         :item="item"
       />
     </div>
@@ -14,40 +14,36 @@
 
 <script>
 
-import Header from '@/components/Header.vue'
-import Card from '@/components/Card.vue'
-
-import {mapGetters} from 'vuex'
+import { mapGetters } from "vuex";
+import Card from "@/components/Card.vue";
 
 export default {
-  name: 'Home',
+  name: "Home-components",
 
   data() {
     return {
       loading: true,
-    }
+    };
   },
 
   async mounted() {
     try {
-      await this.$store.dispatch('GET_TRENDING_FEED')
-      this.loading = false
-
+      await this.$store.dispatch("GET_TRENDING_FEED");
+      this.loading = false;
     } catch (error) {
-      console.log(error);
-      throw error
+      this.$store.commit("setError", error);
+      throw error;
     }
   },
 
   computed: {
-    ...mapGetters(['VOLUME', 'MUTED', 'TRENDING'])
+    ...mapGetters(["VOLUME", "MUTED", "TRENDING"]),
   },
 
   components: {
-    Header,
     Card,
   },
-}
+};
 </script>
 
 <style scoped lang="scss">

@@ -4,15 +4,18 @@
     <div v-if="INFO && !loading" class="profile">
       <div class="profile_header">
         <div class="profile_info">
-          <div class="profile_img" v-if="INFO.user.avatarMedium || INFO.user.avatarLarger || INFO.user.avatarThumb">
-            <img class="profile_img-item" :src="INFO.user.avatarMedium || INFO.user.avatarLarger || INFO.user.avatarThumb" alt="user avarat">
+          <div class="profile_img"
+            v-if="INFO.user.avatarMedium || INFO.user.avatarLarger
+            || INFO.user.avatarThumb"
+          >
+            <img class="profile_img-item"
+              :src="INFO.user.avatarMedium || INFO.user.avatarLarger || INFO.user.avatarThumb"
+              alt="user avarat"
+            >
           </div>
           <div class="profile_name">
             <h1 class="profile_name-title">{{ INFO.user.nickname }}
-              <svg v-if="INFO.user.verified" class="verified jsx-4013687392" width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#20D5EC"></circle><path fill-rule="evenodd" clip-rule="evenodd" d="M37.1213 15.8787C38.2929 17.0503 38.2929 18.9497 37.1213 20.1213L23.6213 33.6213C22.4497 34.7929 20.5503 34.7929 19.3787 33.6213L10.8787 25.1213C9.70711 23.9497 9.70711 22.0503 10.8787 20.8787C12.0503 19.7071 13.9497 19.7071 15.1213 20.8787L21.5 27.2574L32.8787 15.8787C34.0503 14.7071 35.9497 14.7071 37.1213 15.8787Z" fill="white"></path>
-                <circle cx="24" cy="24" r="24" fill="#20D5EC"></circle>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M37.1213 15.8787C38.2929 17.0503 38.2929 18.9497 37.1213 20.1213L23.6213 33.6213C22.4497 34.7929 20.5503 34.7929 19.3787 33.6213L10.8787 25.1213C9.70711 23.9497 9.70711 22.0503 10.8787 20.8787C12.0503 19.7071 13.9497 19.7071 15.1213 20.8787L21.5 27.2574L32.8787 15.8787C34.0503 14.7071 35.9497 14.7071 37.1213 15.8787Z" fill="white"></path>
-              </svg>
+              <img src="@/assets/profile_name-title.svg" class="verified jsx-4013687392" alt="profile name title">
             </h1>
             <span class="profile_name-subtitle">{{ INFO.user.uniqueId }}</span>
             <button class="profile_name-follow">Подписаться</button>
@@ -32,11 +35,11 @@
         </div>
       </div>
       <div class="main">
-        <div 
-          class="main_slot" 
-          v-for="item in userFeed" 
+        <div
+          class="main_slot"
+          v-for="item in userFeed"
           :key="item.id"
-        > 
+        >
           <SmallVideo :video="item"/>
         </div>
       </div>
@@ -46,51 +49,52 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
-import SmallVideo from '@/components/SmallVideo'
+import { mapGetters } from "vuex";
+import SmallVideo from "@/components/SmallVideo";
 
 export default {
+  name: "Profile-component",
+
   data() {
     return {
       userInfo: null,
       userFeed: null,
       loading: true,
-    }
+    };
   },
 
   async mounted() {
-    const userName = this.$route.params.id
+    const userName = this.$route.params.id;
 
-      try {
-      await this.$store.dispatch('GET_USER_INFO', userName)
-      await this.$store.dispatch('GET_USER_FEED', userName)
+    try {
+      await this.$store.dispatch("GET_USER_INFO", userName);
+      await this.$store.dispatch("GET_USER_FEED", userName);
 
-      await this.$store.dispatch('GET_TRENDING_FEED')
-      this.userFeed = this.TRENDING
+      await this.$store.dispatch("GET_TRENDING_FEED");
+      this.userFeed = this.TRENDING;
 
-      this.$store.dispatch('SET_MUTED', true)
-      this.loading = false
-
+      this.$store.dispatch("SET_MUTED", true);
+      this.loading = false;
     } catch (error) {
-      console.log(error)
-      throw error
+      this.$store.commit("setError", error);
+      throw error;
     }
   },
 
   computed: {
-    ...mapGetters(['INFO', 'FEED', 'TRENDING'])
+    ...mapGetters(["INFO", "FEED", "TRENDING"]),
   },
 
   components: {
-    SmallVideo, 
-  }
-}
+    SmallVideo,
+  },
+};
 </script>
 
 <style scoped lang="scss">
 
 .profile {
-  
+
   &_header {
     margin: 0;
     margin-bottom: 20px;
@@ -136,7 +140,7 @@ export default {
       height: 36px;
       background-color: #fe2c55;
       color: #fff;
-      border: none;  
+      border: none;
       line-height: 22px;
       user-select: none;
       border-radius: 4px;
@@ -189,13 +193,12 @@ export default {
   gap: 2px;
 }
 
-
 @media (max-width: 800px){
   .main {
     justify-content: space-around;
   }
   .profile {
-    
+
     &_header {
       width: 300px;
       display: flex;
@@ -228,6 +231,5 @@ export default {
 
   }
 }
-
 
 </style>

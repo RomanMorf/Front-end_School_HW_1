@@ -1,5 +1,5 @@
 <template>
-  <div class="not_found">  
+  <div class="not_found">
     <h2>Упс... Что-то пошло не так :)</h2>
     <h3 @click="$router.push('/')">На главную страницу</h3>
   </div>
@@ -9,7 +9,7 @@
   .not_found {
     text-align: center;
     color: rgba(18, 18, 18, 0.75);
-    
+
     h2 {
       margin: 100px 0;
     }

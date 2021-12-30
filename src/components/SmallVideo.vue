@@ -1,16 +1,16 @@
 <template>
   <div class="slot_wrapper">
     <Loader v-if="loading"/>
-    <video 
+    <video
       @click="playToggle"
       @loadeddata="hideLoader"
 
-      @mouseenter="playerPlay" 
+      @mouseenter="playerPlay"
       @mouseleave="playerPause"
 
       ref="video"
       loop
-      class="slot_video" 
+      class="slot_video"
       :src="video.videoUrl"
     ></video>
     <span class="slot_text">{{ video.authorMeta.heart | short }}</span>
@@ -18,19 +18,20 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
-import playerMixins from '@/mixins/player.mixins.js'
+import { mapGetters } from "vuex";
+import playerMixins from "@/mixins/player.mixins.js";
 
 export default {
-  props: ['video'],
+  name: "SmallVVideo-component",
+  props: ["video"],
   computed: {
-    ...mapGetters(['VOLUME', 'MUTED'])
+    ...mapGetters(["VOLUME", "MUTED"]),
   },
   mixins: [playerMixins],
   mounted() {
-    this.checkParams()
+    this.checkParams();
   },
-}
+};
 </script>
 
 <style scoped lang='scss'>
@@ -56,4 +57,4 @@ export default {
   }
 }
 
-</style> 
+</style>

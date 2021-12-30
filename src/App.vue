@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <div class="main_body">  
+    <div class="main_body">
       <SideBar />
       <div class="main_content">
         <router-view/>
@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import SideBar from '@/components/SideBar.vue'
+import Header from "@/components/Header.vue";
+import SideBar from "@/components/SideBar.vue";
 
 export default {
   components: {
@@ -21,9 +21,9 @@ export default {
   },
 
   async mounted() {
-    await this.$store.dispatch('GET_PLAYER_INFO')
+    await this.$store.dispatch("GET_PLAYER_INFO");
   },
-}
+};
 </script>
 
 <style scoped lang="scss">

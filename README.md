@@ -24,3 +24,24 @@
 PS. На странице пользователя я вывел список видео - Get Trending Feed),
 так как - Get User Feed не работал. Чтобы так было хоть что-то. 
 Заменить его на новый список не составит труда, как только API заработает.
+
+Ниже приведены команды для старта проэкта:
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
