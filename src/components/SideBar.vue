@@ -96,6 +96,7 @@ export default {
   &_list {
     list-style: none;
     padding-left: 0;
+
     &-img {
       margin-right: 5px;
     }
@@ -143,9 +144,11 @@ export default {
         text-overflow: ellipsis;
         overflow: hidden;
       }
+
       h4 {
         font-weight: normal;
       }
+
       .verified {
         margin-right: 5px;
       }
@@ -159,6 +162,7 @@ export default {
       width: 250px;
       overflow: hidden;
     }
+
     &_content {
       width: 220px;
     }
@@ -175,9 +179,11 @@ export default {
     &_content {
       width: 50px;
     }
+
     &_list-item {
       justify-content: space-around;
     }
+    
     &_list-text,
     &_recomend,
     &_hashtags,

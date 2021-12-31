@@ -23,11 +23,15 @@ import playerMixins from "@/mixins/player.mixins.js";
 
 export default {
   name: "SmallVVideo-component",
+
   props: ["video"],
+
   computed: {
     ...mapGetters(["VOLUME", "MUTED"]),
   },
+
   mixins: [playerMixins],
+  
   mounted() {
     this.checkParams();
   },
@@ -41,6 +45,7 @@ export default {
     overflow: hidden;
     position: relative;
   }
+
   &_video {
     background-color: #000;
     object-fit: cover;
@@ -48,6 +53,7 @@ export default {
     min-height: 300px;
     width: 200px;
   }
+
   &_text {
     position: absolute;
     bottom: 10px;

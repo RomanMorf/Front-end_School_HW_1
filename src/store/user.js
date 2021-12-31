@@ -1,4 +1,5 @@
 import axios from "axios";
+import { urlApi, headersApi } from "../api/rapidapi"
 
 export default {
   state: {
@@ -27,11 +28,8 @@ export default {
     async GET_USER_INFO({ commit }, user) {
       const options = {
         method: "GET",
-        url: `https://tiktok33.p.rapidapi.com/user/info/${user}`,
-        headers: {
-          "x-rapidapi-host": "tiktok33.p.rapidapi.com",
-          "x-rapidapi-key": "c1257dc04cmshd888bbb072eb770p1f2b8ajsnbf16d4cd1d66",
-        },
+        url: `${urlApi}/user/info/${user}`,
+        headers: headersApi,
       };
       await axios.request(options).then((response) => {
         commit("setUserInfo", response.data);
@@ -45,11 +43,8 @@ export default {
     async GET_USER_FEED({ commit }, user) {
       const options = {
         method: "GET",
-        url: `https://tiktok33.p.rapidapi.com/user/feed/${user}`,
-        headers: {
-          "x-rapidapi-host": "tiktok33.p.rapidapi.com",
-          "x-rapidapi-key": "c1257dc04cmshd888bbb072eb770p1f2b8ajsnbf16d4cd1d66",
-        },
+        url: `${urlApi}/user/feed/${user}`,
+        headers: headersApi,
       };
       await axios.request(options).then((response) => {
         commit("setUserFeed", response.data);

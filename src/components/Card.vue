@@ -8,7 +8,7 @@
       <div class="card_autor">
         <h3 @click="$router.push('/profile/' + item.authorMeta.name )">{{ item.authorMeta.name }}</h3>
         <span v-if="item.authorMeta.verified">
-          <img class="verified jsx-4013687392" src="@/assets/card_verified.svg" alt="verified">
+          <img class="verified" src="@/assets/card_verified.svg" alt="verified">
         </span>
         <h4>{{ item.authorMeta.nickName }}</h4>
       </div>
@@ -37,7 +37,7 @@
           ></video>
           <span @click="mutedToggle" class="card_video-muted">
             <img v-if="MUTED" src="@/assets/card_player_muted-on.svg" alt="muted on">
-            <img v-if="!MUTED" src="@/assets/card_player_muted-off.svg" alt="muted off">
+            <img v-else src="@/assets/card_player_muted-off.svg" alt="muted off">
           </span>
           <input class="card_video-volume" v-model="volume" type="range" min="0" max="100" @change="setVolume">
           <span v-if="!isPlay" class="card_video-btn" @click="playerPlay">
@@ -79,12 +79,14 @@ import playerMixins from "@/mixins/player.mixins.js";
 
 export default {
   name: "Card-component",
+  
   props: {
     item: {
       type: Object,
       default: {},
     },
   },
+
   data() {
     return {
       volume: 30,
@@ -92,6 +94,7 @@ export default {
       htmlElem: null,
     };
   },
+
   methods: {
     startStopPlay() {
       const startStopLine = (window.innerHeight * 0.25) + window.scrollY;
@@ -107,7 +110,9 @@ export default {
       }
     },
   },
+
   mixins: [playerMixins],
+
   computed: {
     cardText() {
       const arr = this.item.text.split("#");
@@ -204,6 +209,7 @@ export default {
     span {
       margin-right: 5px;
     }
+
     h4 {
       font-weight: 400;
       font-size: 14px;
@@ -222,6 +228,7 @@ export default {
     &-hashtag {
       margin-right: 5px;
       cursor: pointer;
+
       &:hover {
         border-bottom: 1px solid #000;
       }
@@ -258,10 +265,12 @@ export default {
       border-radius: 5px;
       cursor: pointer;
       width: calc(0.56 * (450px + ((100vw - 480px) / 288) * 70));
+
       &:hover ~ .card_video-muted {
         opacity: 1;
         transition: all 0.3s ease;
       }
+
       &.loading {
         background: black url(/assets/img/loading.gif) center center no-repeat;
       }
@@ -273,6 +282,7 @@ export default {
       left: 20px;
       cursor: pointer;
     }
+
     &-volume {
       position: absolute;
       right: -17px;
@@ -288,6 +298,7 @@ export default {
         transition: all 0.3s ease;
       }
     }
+
     &-muted {
       position: absolute;
       bottom: 20px;
@@ -295,17 +306,16 @@ export default {
       cursor: pointer;
       opacity: 0;
       transition: all 0.3s ease;
+
       &:hover ~ .card_video-volume {
         opacity: 1;
         transition: all 0.3s ease;
-
       }
 
       &:hover {
         opacity: 1;
         transition: all 0.3s ease;
       }
-
     }
 
     &-actions {
@@ -326,6 +336,7 @@ export default {
         align-items: center;
         cursor: pointer;
       }
+
       &-text {
         margin: 10px 0;
         max-width: 55px;
@@ -351,13 +362,16 @@ export default {
       align-items: center;
       text-align: center;
     }
+
     &_avatar {
       top: 0;
       left: calc(50% - 100px);
     }
+
     &_autor {
       margin-right: 0;
     }
+
     &_meta-video {
       margin-right: 0;
     }

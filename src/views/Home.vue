@@ -26,6 +26,10 @@ export default {
     };
   },
 
+  components: {
+    Card,
+  },
+
   async mounted() {
     try {
       await this.$store.dispatch("GET_TRENDING_FEED");
@@ -38,10 +42,6 @@ export default {
 
   computed: {
     ...mapGetters(["VOLUME", "MUTED", "TRENDING"]),
-  },
-
-  components: {
-    Card,
   },
 };
 </script>

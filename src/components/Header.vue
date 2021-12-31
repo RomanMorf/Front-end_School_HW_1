@@ -133,6 +133,7 @@ export default {
       border: none;
       background: transparent;
     }
+    
     &-svg {
       width: 24;
       height: 24;

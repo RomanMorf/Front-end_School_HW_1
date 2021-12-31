@@ -63,6 +63,10 @@ export default {
     };
   },
 
+  components: {
+    SmallVideo,
+  },
+
   async mounted() {
     const userName = this.$route.params.id;
 
@@ -83,10 +87,6 @@ export default {
 
   computed: {
     ...mapGetters(["INFO", "FEED", "TRENDING"]),
-  },
-
-  components: {
-    SmallVideo,
   },
 };
 </script>
