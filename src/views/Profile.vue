@@ -5,8 +5,7 @@
       <div class="profile_header">
         <div class="profile_info">
           <div class="profile_img"
-            v-if="INFO.user.avatarMedium || INFO.user.avatarLarger
-            || INFO.user.avatarThumb"
+            v-if="INFO.user.avatarMedium || INFO.user.avatarLarger || INFO.user.avatarThumb"
           >
             <img class="profile_img-item"
               :src="INFO.user.avatarMedium || INFO.user.avatarLarger || INFO.user.avatarThumb"
@@ -15,7 +14,7 @@
           </div>
           <div class="profile_name">
             <h1 class="profile_name-title">{{ INFO.user.nickname }}
-              <img src="@/assets/profile_name-title.svg" class="verified jsx-4013687392" alt="profile name title">
+              <img src="@/assets/img/profile_name-title.svg" class="verified jsx-4013687392" alt="profile name title">
             </h1>
             <span class="profile_name-subtitle">{{ INFO.user.uniqueId }}</span>
             <button class="profile_name-follow">Подписаться</button>

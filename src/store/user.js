@@ -1,5 +1,4 @@
-import axios from "axios";
-import { urlApi, headersApi } from "../api/rapidapi"
+import { getUserInfo, getUserFeed } from '@/api/rapidapi-services.js'
 
 export default {
   state: {
@@ -26,33 +25,15 @@ export default {
 
   actions: {
     async GET_USER_INFO({ commit }, user) {
-      const options = {
-        method: "GET",
-        url: `${urlApi}/user/info/${user}`,
-        headers: headersApi,
-      };
-      await axios.request(options).then((response) => {
-        commit("setUserInfo", response.data);
-        return response.data;
-      }).catch((error) => {
-        commit("setError", error);
-        throw error;
-      });
+      const userInfo = await getUserInfo(user)
+
+      commit("setUserInfo", userInfo);
     },
 
     async GET_USER_FEED({ commit }, user) {
-      const options = {
-        method: "GET",
-        url: `${urlApi}/user/feed/${user}`,
-        headers: headersApi,
-      };
-      await axios.request(options).then((response) => {
-        commit("setUserFeed", response.data);
-        return response.data;
-      }).catch((error) => {
-        commit("setError", error);
-        throw error;
-      });
+      const userFeed = await getUserFeed(user)
+
+      commit("setUserFeed", userFeed);
     },
   },
 

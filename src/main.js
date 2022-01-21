@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-import "@/assets/style.scss";
+import "@/assets/styles/style.scss";
 
 import shortNumber from "@/filters/shortNumber.filter.js";
 import Loader from "@/components/Loader";

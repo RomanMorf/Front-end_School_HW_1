@@ -1,5 +1,6 @@
 import axios from "axios";
 import { urlApi, headersApi } from "../api/rapidapi"
+import { getTrandingFeed } from '@/api/rapidapi-services.js'
 
 export default {
   state: {
@@ -11,24 +12,15 @@ export default {
       state.trending = trending;
     },
     clearTrendingInfo(state) {
-      state.userInfo = [];
+      state.trending = [];
     },
   },
 
   actions: {
     async GET_TRENDING_FEED({ commit }) {
-      const options = {
-        method: "GET",
-        url: `${urlApi}/trending/feed`,
-        headers: headersApi,
-      };
-
-      await axios.request(options).then((response) => {
-        commit("setTrendingInfo", response.data);
-      }).catch((error) => {
-        commit("setError", error);
-        throw error;
-      });
+      const trending = await getTrandingFeed()
+      console.log(trending);
+      commit("setTrendingInfo", trending);
     },
   },
 

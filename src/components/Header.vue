@@ -2,8 +2,8 @@
   <div class="header_container">
     <div class="header_content">
       <div class="header_logo">
-        <a @click="$router.push('/')">
-          <img src="@/assets/logo.svg" alt="tiktok-logo">
+        <a class="header_link" @click="$router.push('/')">
+          <img src="@/assets/img/logo.svg" alt="tiktok-logo">
         </a>
       </div>
       <div class="header_search">
@@ -11,7 +11,7 @@
           <input type="text" class="header_input" placeholder="Поиск аккаунтов и видео">
           <span class="header_input-split"></span>
           <button class="header_input-btn">
-            <img class="header-input-svg" src="@/assets/header_search.svg">
+            <img class="header-input-svg" src="@/assets/img/header_search.svg">
           </button>
         </form>
       </div>
@@ -21,7 +21,7 @@
         </div>
         <button class="header_login">Войти</button>
         <div class="header_icon">
-          <img src="@/assets/header_icon.svg">
+          <img src="@/assets/img/header_icon.svg">
         </div>
       </div>
     </div>

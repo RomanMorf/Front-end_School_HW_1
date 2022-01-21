@@ -16,7 +16,7 @@ export default new Vuex.Store({
     setError(state, error) {
       state.error = error;
     },
-    slearError(state) {
+    clearError(state) {
       state.error = null;
     },
   },

@@ -22,7 +22,7 @@ import { mapGetters } from "vuex";
 import playerMixins from "@/mixins/player.mixins.js";
 
 export default {
-  name: "SmallVVideo-component",
+  name: "SmallVideo-component",
 
   props: ["video"],
 

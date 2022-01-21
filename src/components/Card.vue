@@ -8,20 +8,20 @@
       <div class="card_autor">
         <h3 @click="$router.push('/profile/' + item.authorMeta.name )">{{ item.authorMeta.name }}</h3>
         <span v-if="item.authorMeta.verified">
-          <img class="verified" src="@/assets/card_verified.svg" alt="verified">
+          <img class="verified" src="@/assets/img/card_verified.svg" alt="verified">
         </span>
         <h4>{{ item.authorMeta.nickName }}</h4>
       </div>
       <div class="card_meta-video">
         <span class="card_meta-text" >{{ cardText }}</span>
-        <span class="card_meta-hashtag" v-for="hashtag in item.hashtags" :key="hashtag.id">#{{ hashtag.name }}</span>
+        <span class="card_meta-hashtag" v-for="(hashtag, index) in item.hashtags" :key="index">#{{ hashtag.name }}</span>
       </div>
       <div class="card_meta-audio">
-        <img src="@/assets/card_music.svg" alt="music">
+        <img src="@/assets/img/card_music.svg" alt="music">
         <span class="card_meta-audio-info">
           <span v-if="item.musicMeta.musicName === 'original sound'" class="card_meta-audio-name">оригинальная песня</span>
           <span v-else>{{ item.musicMeta.musicName }}</span>
-          <span class="card_meta-audio-autor"> - {{ item.musicMeta.musicAuthor }}</span>
+          <span class="card_meta-audio-autor">- {{ item.musicMeta.musicAuthor }}</span>
         </span>
       </div>
       <div class="card_video">
@@ -36,31 +36,31 @@
             @loadeddata="hideLoader"
           ></video>
           <span @click="mutedToggle" class="card_video-muted">
-            <img v-if="MUTED" src="@/assets/card_player_muted-on.svg" alt="muted on">
-            <img v-else src="@/assets/card_player_muted-off.svg" alt="muted off">
+            <img v-if="MUTED" src="@/assets/img/card_player_muted-on.svg" alt="muted on">
+            <img v-else src="@/assets/img/card_player_muted-off.svg" alt="muted off">
           </span>
           <input class="card_video-volume" v-model="volume" type="range" min="0" max="100" @change="setVolume">
           <span v-if="!isPlay" class="card_video-btn" @click="playerPlay">
-            <img class="toggle-inner" src="@/assets/card_player_play.svg" alt="play">
+            <img class="toggle-inner" src="@/assets/img/card_player_play.svg" alt="play">
           </span>
           <span v-if="isPlay" class="card_video-btn" @click="playerPause">
-            <img src="@/assets/card_player_pause.svg" alt="pause">
+            <img src="@/assets/img/card_player_pause.svg" alt="pause">
           </span>
           <div class="card_video-actions">
             <div class="card_video-actions-btn">
-              <img src="@/assets/card_liks.svg" alt="liks">
+              <img src="@/assets/img/card_liks.svg" alt="liks">
             </div>
             <span class="card_video-actions-text">
               {{ item.authorMeta.heart | short}}
             </span>
             <div class="card_video-actions-btn">
-              <img src="@/assets/card_comments.svg" alt="comments">
+              <img src="@/assets/img/card_comments.svg" alt="comments">
             </div>
             <span class="card_video-actions-text">
               {{ item.commentCount | short}}
             </span>
             <div class="card_video-actions-btn">
-              <img src="@/assets/card_reposts.svg" alt="reposts">
+              <img src="@/assets/img/card_reposts.svg" alt="reposts">
             </div>
             <span class="card_video-actions-text">
               {{ item.shareCount | short}}

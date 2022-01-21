@@ -7,19 +7,11 @@ export default {
   },
 
   mutations: {
-    setPlayerInfo(state, info) {
-      state.playerInfo = info;
-    },
-
     setVolume(state, volume) {
       state.playerInfo.volume = volume;
     },
     setMuted(state, muted) {
       state.playerInfo.muted = muted;
-    },
-
-    clearPlayerInfo(state) {
-      state.playerInfo = {};
     },
   },
 
@@ -45,11 +37,8 @@ export default {
   },
 
   getters: {
-    PLAYER: (s) => s.playerInfo,
     VOLUME: (s) => s.playerInfo.volume,
     MUTED: (s) => s.playerInfo.muted,
   },
 
-  modules: {
-  },
 };

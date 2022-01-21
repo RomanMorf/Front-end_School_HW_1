@@ -5,7 +5,7 @@
       <Card
         v-else
         v-for="item in TRENDING"
-        :key="item.id"
+        :key="`${item.createTime}-${item.id}`"
         :item="item"
       />
     </div>
