@@ -5,7 +5,7 @@ export const getTrandingFeed = async () => {
   try {
     return demoFeed;
 
-    // api ix snot working right now
+    // api is not working right now
     await http.get("/trending/feed").then((res: any) => {
       return res.data
     });
