@@ -1,32 +1,56 @@
 <template>
   <div class="card" :id="'card-' + item.id">
-    <a class="card_link" @click="$router.push('/profile/' + item.authorMeta.name )">
-      <img class="card_avatar" :src="item.authorMeta.avatar" alt="user avatar">
+    <a
+      class="card_link"
+      @click="$router.push('/profile/' + item.authorMeta.name)"
+    >
+      <img
+        class="card_avatar"
+        :src="item.authorMeta.avatar"
+        alt="user avatar"
+      />
     </a>
     <button class="card_subscribe">Подписаться</button>
     <div class="card_body">
       <div class="card_autor">
-        <h3 @click="$router.push('/profile/' + item.authorMeta.name )">{{ item.authorMeta.name }}</h3>
+        <h3 @click="$router.push('/profile/' + item.authorMeta.name)">
+          {{ item.authorMeta.name }}
+        </h3>
         <span v-if="item.authorMeta.verified">
-          <img class="verified" src="@/assets/img/card_verified.svg" alt="verified">
+          <img
+            class="verified"
+            src="@/assets/img/card_verified.svg"
+            alt="verified"
+          />
         </span>
         <h4>{{ item.authorMeta.nickName }}</h4>
       </div>
       <div class="card_meta-video">
-        <span class="card_meta-text" >{{ cardText }}</span>
-        <span class="card_meta-hashtag" v-for="(hashtag, index) in item.hashtags" :key="index">#{{ hashtag.name }}</span>
+        <span class="card_meta-text">{{ cardText }}</span>
+        <span
+          class="card_meta-hashtag"
+          v-for="(hashtag, index) in item.hashtags"
+          :key="index"
+          >#{{ hashtag.name }}</span
+        >
       </div>
       <div class="card_meta-audio">
-        <img src="@/assets/img/card_music.svg" alt="music">
+        <img src="@/assets/img/card_music.svg" alt="music" />
         <span class="card_meta-audio-info">
-          <span v-if="item.musicMeta.musicName === 'original sound'" class="card_meta-audio-name">оригинальная песня</span>
+          <span
+            v-if="item.musicMeta.musicName === 'original sound'"
+            class="card_meta-audio-name"
+            >оригинальная песня</span
+          >
           <span v-else>{{ item.musicMeta.musicName }}</span>
-          <span class="card_meta-audio-autor">- {{ item.musicMeta.musicAuthor }}</span>
+          <span class="card_meta-audio-autor"
+            >- {{ item.musicMeta.musicAuthor }}</span
+          >
         </span>
       </div>
       <div class="card_video">
         <div class="card_video-wrapper">
-          <Loader v-if="loading"/>
+          <Loader v-if="loading" />
           <video
             ref="video"
             loop
@@ -36,34 +60,53 @@
             @loadeddata="hideLoader"
           ></video>
           <span @click="mutedToggle" class="card_video-muted">
-            <img v-if="MUTED" src="@/assets/img/card_player_muted-on.svg" alt="muted on">
-            <img v-else src="@/assets/img/card_player_muted-off.svg" alt="muted off">
+            <img
+              v-if="GET_MUTED"
+              src="@/assets/img/card_player_muted-on.svg"
+              alt="muted on"
+            />
+            <img
+              v-else
+              src="@/assets/img/card_player_muted-off.svg"
+              alt="muted off"
+            />
           </span>
-          <input class="card_video-volume" v-model="volume" type="range" min="0" max="100" @change="setVolume">
+          <input
+            class="card_video-volume"
+            v-model="volume"
+            type="range"
+            min="0"
+            max="100"
+            @change="setVolume"
+          />
           <span v-if="!isPlay" class="card_video-btn" @click="playerPlay">
-            <img class="toggle-inner" src="@/assets/img/card_player_play.svg" alt="play">
+            <img
+              class="toggle-inner"
+              src="@/assets/img/card_player_play.svg"
+              alt="play"
+            />
           </span>
           <span v-if="isPlay" class="card_video-btn" @click="playerPause">
-            <img src="@/assets/img/card_player_pause.svg" alt="pause">
+            <img src="@/assets/img/card_player_pause.svg" alt="pause" />
           </span>
           <div class="card_video-actions">
             <div class="card_video-actions-btn">
-              <img src="@/assets/img/card_liks.svg" alt="liks">
+              <img src="@/assets/img/card_liks.svg" alt="liks" />
             </div>
             <span class="card_video-actions-text">
-              {{ item.authorMeta.heart | short}}
+              {{ item.authorMeta.heart | short }}
             </span>
             <div class="card_video-actions-btn">
-              <img src="@/assets/img/card_comments.svg" alt="comments">
+              <img src="@/assets/img/card_comments.svg" alt="comments" />
             </div>
             <span class="card_video-actions-text">
-              {{ item.commentCount | short}}
+              {{ item.commentCount | short }}
             </span>
             <div class="card_video-actions-btn">
-              <img src="@/assets/img/card_reposts.svg" alt="reposts">
+              <img src="@/assets/img/card_reposts.svg" alt="reposts" />
             </div>
             <span class="card_video-actions-text">
-              {{ item.shareCount | short}}
+              {{ item.shareCount | short }}
             </span>
           </div>
         </div>
@@ -72,81 +115,92 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapGetters } from "vuex";
 
-import playerMixins from "@/mixins/player.mixins.js";
+import PlayerMixins from "../mixins/PlayerMixins.vue"
 
-export default {
+export default PlayerMixins.extend({
   name: "Card-component",
-  
+
   props: {
     item: {
       type: Object,
-      default: {},
     },
   },
+
+  mixins: [PlayerMixins],
 
   data() {
     return {
       volume: 30,
       muted: false,
       htmlElem: null,
+      isPlay: false,
+      // isPause: false,
+      // loading: true,
     };
   },
 
   methods: {
     startStopPlay() {
-      const startStopLine = (window.innerHeight * 0.25) + window.scrollY;
+      const startStopLine = window.innerHeight * 0.25 + window.scrollY;
       const elemTop = this.htmlElem.offsetTop;
       const elemHeigth = this.htmlElem.offsetHeight;
 
-      if (startStopLine < elemTop && startStopLine < elemTop + elemHeigth) {
+      if (startStopLine < elemTop && 
+          startStopLine < elemTop + elemHeigth
+      ) {
         this.isPlay ? this.playerStop() : null;
-      } else if (startStopLine > elemTop && startStopLine > elemTop + elemHeigth) {
+      } else if (
+        startStopLine > elemTop &&
+        startStopLine > elemTop + elemHeigth
+      ) {
         this.isPlay ? this.playerStop() : null;
-      } else if (startStopLine > elemTop && startStopLine < elemTop + elemHeigth) {
+      } else if (
+        startStopLine > elemTop &&
+        startStopLine < elemTop + elemHeigth
+      ) {
         this.playerPlay();
       }
     },
   },
-
-  mixins: [playerMixins],
 
   computed: {
     cardText() {
       const arr = this.item.text.split("#");
       return arr[0];
     },
-    ...mapGetters(["VOLUME", "MUTED"]),
+    ...mapGetters(["VOLUME", "GET_MUTED"]),
   },
 
   mounted() {
     this.checkParams();
-    this.htmlElem = document.querySelector(`#card-${this.item.id}`);
+    const html = document.querySelector(`#card-${this.item.id}`);
+    this.htmlElem = html
 
     document.addEventListener("scroll", () => {
       this.startStopPlay();
     });
   },
-};
+});
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .card {
   position: relative;
 
-    &::after {
-      content: "";
-      position: absolute;
-      height: 1px;
-      left: 16px;
-      right: 16px;
-      background: rgba(22,24,35,0.12);
-      -webkit-transform: scaleY(0.5);
-      -ms-transform: scaleY(0.5);
-      transform: scaleY(0.5);
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    left: 16px;
+    right: 16px;
+    background: rgba(22, 24, 35, 0.12);
+    -webkit-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
 
   &_link {
     cursor: pointer;
@@ -168,7 +222,7 @@ export default {
     color: #fe2c55;
     right: 10px;
     top: 20px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     border-radius: 3px;
     font-weight: 600;
     font-size: 16px;
@@ -178,7 +232,7 @@ export default {
     cursor: pointer;
 
     &:hover {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       background-color: #fe2c5623;
     }
   }
@@ -204,7 +258,6 @@ export default {
       &:hover {
         text-decoration: underline;
       }
-
     }
     span {
       margin-right: 5px;
@@ -251,7 +304,6 @@ export default {
       span:hover {
         border-bottom: 1px solid #000;
       }
-
     }
   }
 
@@ -348,10 +400,9 @@ export default {
       }
     }
   }
-
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
   .card {
     &_body {
       margin-left: 0px;
@@ -377,5 +428,4 @@ export default {
     }
   }
 }
-
 </style>

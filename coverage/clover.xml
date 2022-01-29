@@ -1,81 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1642797808012" clover="3.2.0">
-  <project timestamp="1642797808012" name="All files">
-    <metrics statements="148" coveredstatements="98" conditionals="38" coveredconditionals="13" methods="50" coveredmethods="36" elements="236" coveredelements="147" complexity="0" loc="148" ncloc="148" packages="6" files="14" classes="14"/>
+<coverage generated="1643494478377" clover="3.2.0">
+  <project timestamp="1643494478377" name="All files">
+    <metrics statements="205" coveredstatements="151" conditionals="46" coveredconditionals="15" methods="52" coveredmethods="37" elements="303" coveredelements="203" complexity="0" loc="205" ncloc="205" packages="10" files="33" classes="33"/>
     <package name="api">
-      <metrics statements="27" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
-      <file name="rapidapi-services.js" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\api\rapidapi-services.js">
-        <metrics statements="22" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-      </file>
-      <file name="rapidapi.js" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\api\rapidapi.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="rapidapi.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\api\rapidapi.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
       </file>
     </package>
     <package name="components">
-      <metrics statements="23" coveredstatements="12" conditionals="16" coveredconditionals="0" methods="7" coveredmethods="4"/>
+      <metrics statements="27" coveredstatements="16" conditionals="16" coveredconditionals="0" methods="7" coveredmethods="4"/>
       <file name="Card.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\components\Card.vue">
-        <metrics statements="18" coveredstatements="8" conditionals="16" coveredconditionals="0" methods="5" coveredmethods="3"/>
-        <line num="76" count="2" type="stmt"/>
-        <line num="78" count="2" type="stmt"/>
-        <line num="91" count="16" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
-        <line num="101" count="0" type="stmt"/>
-        <line num="102" count="0" type="stmt"/>
-        <line num="104" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="105" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="106" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="107" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="108" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="109" count="0" type="stmt"/>
-        <line num="118" count="16" type="stmt"/>
-        <line num="119" count="16" type="stmt"/>
-        <line num="125" count="16" type="stmt"/>
-        <line num="126" count="16" type="stmt"/>
-        <line num="128" count="16" type="stmt"/>
-        <line num="129" count="0" type="stmt"/>
+        <metrics statements="19" coveredstatements="9" conditionals="16" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <line num="119" count="2" type="stmt"/>
+        <line num="121" count="2" type="stmt"/>
+        <line num="135" count="16" type="stmt"/>
+        <line num="147" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="149" count="0" type="stmt"/>
+        <line num="151" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="154" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="155" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="159" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="160" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="164" count="0" type="stmt"/>
+        <line num="171" count="16" type="stmt"/>
+        <line num="172" count="16" type="stmt"/>
+        <line num="178" count="16" type="stmt"/>
+        <line num="179" count="16" type="stmt"/>
+        <line num="180" count="16" type="stmt"/>
+        <line num="182" count="16" type="stmt"/>
+        <line num="183" count="0" type="stmt"/>
+      </file>
+      <file name="Header.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\components\Header.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+      <file name="Loader.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\components\Loader.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="17" count="5" type="stmt"/>
       </file>
       <file name="SideBar.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\components\SideBar.vue">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
       </file>
       <file name="SmallVideo.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\components\SmallVideo.vue">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="36" count="5" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="filters">
+    <package name="heplers">
       <metrics statements="9" coveredstatements="9" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
-      <file name="shortNumber.filter.js" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\filters\shortNumber.filter.js">
+      <file name="shortNumber.filter.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\heplers\shortNumber.filter.ts">
         <metrics statements="9" coveredstatements="9" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
         <line num="2" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="3" count="1" type="stmt"/>
@@ -89,125 +76,264 @@
       </file>
     </package>
     <package name="mixins">
-      <metrics statements="34" coveredstatements="25" conditionals="8" coveredconditionals="4" methods="9" coveredmethods="8"/>
-      <file name="player.mixins.js" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\mixins\player.mixins.js">
-        <metrics statements="34" coveredstatements="25" conditionals="8" coveredconditionals="4" methods="9" coveredmethods="8"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="21" type="stmt"/>
-        <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
-        <line num="31" count="3" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
+      <metrics statements="35" coveredstatements="26" conditionals="12" coveredconditionals="6" methods="9" coveredmethods="8"/>
+      <file name="PlayerMixins.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\mixins\PlayerMixins.vue">
+        <metrics statements="35" coveredstatements="26" conditionals="12" coveredconditionals="6" methods="9" coveredmethods="8"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="8" count="34" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
         <line num="37" count="2" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="49" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="54" count="27" type="cond" truecount="1" falsecount="1"/>
-        <line num="55" count="27" type="stmt"/>
-        <line num="56" count="27" type="stmt"/>
-        <line num="57" count="27" type="stmt"/>
-        <line num="60" count="2" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="54" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="59" count="22" type="cond" truecount="1" falsecount="1"/>
+        <line num="60" count="22" type="stmt"/>
+        <line num="61" count="22" type="cond" truecount="1" falsecount="1"/>
+        <line num="62" count="22" type="cond" truecount="1" falsecount="1"/>
+        <line num="65" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="store">
-      <metrics statements="33" coveredstatements="21" conditionals="4" coveredconditionals="0" methods="22" coveredmethods="18"/>
-      <file name="index.js" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\index.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
+    <package name="services">
+      <metrics statements="27" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="3"/>
+      <file name="getTrandingFeed.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\services\getTrandingFeed.ts">
+        <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
       </file>
-      <file name="player.js" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\player.js">
-        <metrics statements="14" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="7" coveredmethods="6"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
+      <file name="getUserFeed.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\services\getUserFeed.ts">
+        <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="getUserInfo.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\services\getUserInfo.ts">
+        <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.error">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="getters.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\error\getters.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+      </file>
+      <file name="index.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\error\index.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+      <file name="mutations.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\error\mutations.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="state.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\error\state.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.player">
+      <metrics statements="27" coveredstatements="19" conditionals="8" coveredconditionals="0" methods="7" coveredmethods="6"/>
+      <file name="actions.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\player\actions.ts">
+        <metrics statements="15" coveredstatements="7" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
-        <line num="41" count="3" type="stmt"/>
       </file>
-      <file name="trending.js" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\trending.js">
-        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="28" count="6" type="stmt"/>
+      <file name="getters.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\player\getters.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
       </file>
-      <file name="user.js" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\user.js">
-        <metrics statements="10" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="6"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="21" count="5" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="41" count="9" type="stmt"/>
-        <line num="42" count="9" type="stmt"/>
+      <file name="index.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\player\index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+      </file>
+      <file name="mutations.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\player\mutations.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+      </file>
+      <file name="state.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\player\state.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.trending">
+      <metrics statements="16" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <file name="actions.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\trending\actions.ts">
+        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+      <file name="getters.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\trending\getters.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+      </file>
+      <file name="index.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\trending\index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+      <file name="mutations.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\trending\mutations.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+      <file name="state.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\trending\state.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.user">
+      <metrics statements="21" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <file name="actions.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\user\actions.ts">
+        <metrics statements="9" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="getters.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\user\getters.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\user\index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="mutations.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\user\mutations.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+      <file name="state.ts" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\store\user\state.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
     <package name="views">
-      <metrics statements="22" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+      <metrics statements="26" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
       <file name="Home.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\views\Home.vue">
-        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
-        <line num="36" count="2" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
       </file>
       <file name="NotFound.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\views\NotFound.vue">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="13" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
       </file>
       <file name="Profile.vue" path="D:\WEB\VUE\genesis\Front-end_School_HW_1\src\views\Profile.vue">
-        <metrics statements="13" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="58" count="5" type="stmt"/>
-        <line num="70" count="5" type="stmt"/>
-        <line num="72" count="5" type="stmt"/>
-        <line num="73" count="5" type="stmt"/>
-        <line num="74" count="5" type="stmt"/>
+        <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
         <line num="76" count="5" type="stmt"/>
-        <line num="77" count="5" type="stmt"/>
-        <line num="79" count="5" type="stmt"/>
-        <line num="80" count="5" type="stmt"/>
-        <line num="82" count="0" type="stmt"/>
-        <line num="83" count="0" type="stmt"/>
+        <line num="88" count="5" type="stmt"/>
+        <line num="90" count="5" type="stmt"/>
+        <line num="91" count="5" type="stmt"/>
+        <line num="92" count="5" type="stmt"/>
+        <line num="94" count="5" type="stmt"/>
+        <line num="95" count="5" type="stmt"/>
+        <line num="97" count="5" type="stmt"/>
+        <line num="98" count="5" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
       </file>
     </package>
   </project>

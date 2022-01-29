@@ -66,18 +66,21 @@ describe('Home component tests', () => {
       shareCount: 1000000,
     }
   ]
-
-  beforeEach(()=> {
-    getters = {
-      VOLUME: () => 50,
-      MUTED: () => false,
-      TRENDING: () => trengings
-    }
-    actions = {
+  getters = {
+    GET_VOLUME: () => 50,
+    GET_MUTED: () => false,
+    TRENDING: () => trengings
+  }
+  actions = {
     GET_TRENDING_FEED: () => {/* do something */}
-    }
-    store = new Vuex.Store({ getters, actions })
-    wrapper = shallowMount(Home, { localVue, store } )
+  }
+  store = new Vuex.Store({ getters, actions })
+  wrapper = shallowMount(Home, { localVue, store, 
+    data() {
+      return {
+        loading: true,
+      };
+    }, 
   })
 
   it('is Home component exist', () => {
@@ -88,6 +91,7 @@ describe('Home component tests', () => {
     expect(wrapper.find('.video').exists()).toBe(true)
     expect(wrapper.find('.video_container').exists()).toBe(true)
   });
+
 });
 
 

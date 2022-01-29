@@ -1,4 +1,4 @@
-import { createLocalVue, mount } from '@vue/test-utils'
+import { createLocalVue, shallowMount, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
 
 import SmallVideo from '@/components/SmallVideo.vue'
@@ -15,35 +15,32 @@ describe('Card component tests', () => {
   let store
   let wrapper
   let video
-  let volume
 
   window.HTMLMediaElement.prototype.load = () => { /* do nothing */ };
   window.HTMLMediaElement.prototype.play = () => { /* do nothing */ };
   window.HTMLMediaElement.prototype.pause = () => { /* do nothing */ };
   window.HTMLMediaElement.prototype.addTextTrack = () => { /* do nothing */ };
 
-  beforeEach(()=> {
-    volume = 30
-    video = {
-      videoUrl: 'http://some.video.mp4',
-      authorMeta: {
-        heart: 100000000
-      }
+  video = {
+    videoUrl: 'http://some.video.mp4',
+    authorMeta: {
+      heart: 100000000
     }
-    getters = {
-      VOLUME: () => 50,
-      MUTED: () => false,
-    }
-    store = new Vuex.Store({ getters })
+  }
 
-    wrapper = mount(SmallVideo, { 
-      localVue, 
-      store, 
-      propsData: { 
-        video,
-        volume
-      }
-    })
+  getters = {
+    GET_VOLUME: () => 30,
+    GET_MUTED: () => false,
+  }
+
+  store = new Vuex.Store({ getters })
+
+  wrapper = shallowMount(SmallVideo, { 
+    localVue, 
+    store, 
+    propsData: { 
+      video,
+    }
   })
 
   it('is component SmallVideo exist', () => {
@@ -56,23 +53,15 @@ describe('Card component tests', () => {
     expect(wrapper.find('.slot_text').exists()).toBe(true)
   });
 
-  it('check lodader component exist', () => {
-    expect(wrapper.findComponent(Loader).exists()).toBe(true)
-  });
-
-  it('check hideLoader function', async () => {
-    expect( wrapper.vm.loading).toBe(true)
-    wrapper.vm.hideLoader()
-    expect( wrapper.vm.loading).toBe(false)
-  });
-
   it('component tests with mouse actions ("mouseenter", "mouseleave") ', async () => {
-    expect(wrapper.vm.isPlay).toBe(false)
+    const video = wrapper.findAll('.slot_video')
 
-    await wrapper.find('.slot_video').trigger('mouseenter')
+    expect(wrapper.vm.isPlay).toBe(false)
+    
+    await video.at(1).trigger('mouseenter')
     expect(wrapper.vm.isPlay).toBe(true)
 
-    await wrapper.find('.slot_video').trigger('mouseleave')
+    await video.at(1).trigger('mouseleave')
     expect(wrapper.vm.isPlay).toBe(false)
   });
 

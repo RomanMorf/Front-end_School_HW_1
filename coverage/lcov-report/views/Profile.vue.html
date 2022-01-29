@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.62% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/13</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.62% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/13</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
@@ -290,7 +290,33 @@
 <a name='L232'></a><a href='#L232'>232</a>
 <a name='L233'></a><a href='#L233'>233</a>
 <a name='L234'></a><a href='#L234'>234</a>
-<a name='L235'></a><a href='#L235'>235</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -343,6 +369,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -373,14 +401,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -526,58 +546,76 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
   &lt;div&gt;
-    &lt;Loader v-if="loading"/&gt;
+    &lt;Loader v-if="loading" /&gt;
     &lt;div v-if="INFO &amp;&amp; !loading" class="profile"&gt;
       &lt;div class="profile_header"&gt;
         &lt;div class="profile_info"&gt;
-          &lt;div class="profile_img"
-            v-if="INFO.user.avatarMedium || INFO.user.avatarLarger || INFO.user.avatarThumb"
+          &lt;div
+            class="profile_img"
+            v-if="
+              INFO.user.avatarMedium ||
+              INFO.user.avatarLarger ||
+              INFO.user.avatarThumb
+            "
           &gt;
-            &lt;img class="profile_img-item"
-              :src="INFO.user.avatarMedium || INFO.user.avatarLarger || INFO.user.avatarThumb"
+            &lt;img
+              class="profile_img-item"
+              :src="
+                INFO.user.avatarMedium ||
+                INFO.user.avatarLarger ||
+                INFO.user.avatarThumb
+              "
               alt="user avarat"
-            &gt;
+            /&gt;
           &lt;/div&gt;
           &lt;div class="profile_name"&gt;
-            &lt;h1 class="profile_name-title"&gt;{{ INFO.user.nickname }}
-              &lt;img src="@/assets/img/profile_name-title.svg" class="verified jsx-4013687392" alt="profile name title"&gt;
+            &lt;h1 class="profile_name-title"&gt;
+              {{ INFO.user.nickname }}
+              &lt;img
+                src="@/assets/img/profile_name-title.svg"
+                class="verified jsx-4013687392"
+                alt="profile name title"
+              /&gt;
             &lt;/h1&gt;
             &lt;span class="profile_name-subtitle"&gt;{{ INFO.user.uniqueId }}&lt;/span&gt;
             &lt;button class="profile_name-follow"&gt;Подписаться&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
         &lt;h2 class="profile_count"&gt;
-          &lt;span class="profile_count-item"&gt; &lt;strong&gt; {{ INFO.stats.followingCount | short }}&lt;/strong&gt; Подписки&lt;/span&gt;
-          &lt;span class="profile_count-item"&gt;&lt;strong&gt;{{ INFO.stats.followerCount | short}}&lt;/strong&gt; Подписчики&lt;/span&gt;
-          &lt;span class="profile_count-item"&gt;&lt;strong&gt;{{ INFO.stats.heartCount | short}}&lt;/strong&gt; Лайки&lt;/span&gt;
+          &lt;span class="profile_count-item"&gt;
+            &lt;strong&gt;{{ INFO.stats.followingCount | short }}&lt;/strong&gt; Подписки
+          &lt;/span&gt;
+          &lt;span class="profile_count-item"
+            &gt;&lt;strong&gt;{{ INFO.stats.followerCount | short }}&lt;/strong&gt; Подписчики
+          &lt;/span&gt;
+          &lt;span class="profile_count-item"
+            &gt;&lt;strong&gt;{{ INFO.stats.heartCount | short }}&lt;/strong&gt; Лайки
+          &lt;/span&gt;
         &lt;/h2&gt;
-        &lt;div v-if="INFO.user.signature" class="profile_desc" &gt;
+        &lt;div v-if="INFO.user.signature" class="profile_desc"&gt;
           {{ INFO.user.signature }}
         &lt;/div&gt;
-        &lt;div v-if="INFO.user.bioLink" class="profile_link" &gt;
-          &lt;img src="@/assets/img/link_black_24dp.svg" alt="link-img"&gt;
+        &lt;div v-if="INFO.user.bioLink" class="profile_link"&gt;
+          &lt;img src="@/assets/img/link_black_24dp.svg" alt="link-img" /&gt;
           &lt;a :href="INFO.user.bioLink.link"&gt;{{ INFO.user.bioLink.link }}&lt;/a&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class="main"&gt;
-        &lt;div
-          class="main_slot"
-          v-for="item in userFeed"
-          :key="item.id"
-        &gt;
-          &lt;SmallVideo :video="item"/&gt;
+        &lt;div class="main_slot" v-for="item in userFeed" :key="item.id"&gt;
+          &lt;SmallVideo :video="item" /&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-&nbsp;
   &lt;/div&gt;
 &lt;/template&gt;
 &nbsp;
-&lt;script&gt;
+&lt;script lang="ts"&gt;
 import { mapGetters } from "vuex";
-import SmallVideo from "@/components/SmallVideo";
+import SmallVideo from "../components/SmallVideo.vue";
 &nbsp;
-export default {
+import Vue from "vue";
+&nbsp;
+export default Vue.extend({
   name: "Profile-component",
 &nbsp;
   data() {
@@ -613,13 +651,11 @@ export default {
   computed: {
     ...mapGetters(["INFO", "FEED", "TRENDING"]),
   },
-};
+});
 &lt;/script&gt;
 &nbsp;
 &lt;style scoped lang="scss"&gt;
-&nbsp;
 .profile {
-&nbsp;
   &amp;_header {
     margin: 0;
     margin-bottom: 20px;
@@ -636,7 +672,7 @@ export default {
   &amp;_img {
     &amp;-item {
       width: 116px;
-      height:116px;
+      height: 116px;
       border-radius: 50%;
       overflow: hidden;
     }
@@ -671,15 +707,15 @@ export default {
       border-radius: 4px;
       box-sizing: border-box;
       cursor: pointer;
-      -webkit-transition: all 0.2s cubic-bezier(0.65,0,0.35,1);
-      transition: all 0.2s cubic-bezier(0.65,0,0.35,1);
+      -webkit-transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+      transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
     }
   }
 &nbsp;
   &amp;_count {
     font-size: 20px;
     font-weight: normal;
-    color: rgba(18,18,18,0.75);
+    color: rgba(18, 18, 18, 0.75);
     margin-bottom: 20px;
 &nbsp;
     &amp;-item:not(:last-child) {
@@ -706,10 +742,8 @@ export default {
       color: black;
       font-weight: bold;
       font-size: 18px;
-&nbsp;
     }
   }
-&nbsp;
 }
 &nbsp;
 .main {
@@ -718,12 +752,11 @@ export default {
   gap: 2px;
 }
 &nbsp;
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .main {
     justify-content: space-around;
   }
   .profile {
-&nbsp;
     &amp;_header {
       width: 300px;
       display: flex;
@@ -733,7 +766,6 @@ export default {
       box-sizing: border-box;
       padding-right: 0px;
       margin: 0 auto;
-&nbsp;
     }
     &amp;_info {
       display: flex;
@@ -753,10 +785,8 @@ export default {
       max-width: 300px;
       overflow-wrap: break-word;
     }
-&nbsp;
   }
 }
-&nbsp;
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -765,7 +795,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jan 21 2022 22:43:27 GMT+0200 (Восточная Европа, стандартное время)
+                at Sun Jan 30 2022 00:14:38 GMT+0200 (Восточная Европа, стандартное время)
             </div>
         </div>
         <script src="..\prettify.js"></script>

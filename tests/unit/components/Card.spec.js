@@ -41,8 +41,8 @@ describe('Card component tests', () => {
 
   beforeEach(()=> {
     getters = {
-      VOLUME: () => 50,
-      MUTED: () => false,
+      GET_VOLUME: () => 50,
+      GET_MUTED: () => false,
     }
     actions = {
       SET_MUTED: () => {/*  */},
@@ -123,8 +123,8 @@ describe('Card component tests', () => {
 
   it('check muted img when MUTED is true', () => {
     getters = {
-      VOLUME: () => 50,
-      MUTED: () => true,
+      GET_VOLUME: () => 50,
+      GET_MUTED: () => true,
     }
     actions = {
       SET_MUTED: jest.fn(),
@@ -179,10 +179,10 @@ describe('Card video buttons', () => {
   window.HTMLMediaElement.prototype.pause = () => { /* do nothing */ };
   window.HTMLMediaElement.prototype.addTextTrack = () => { /* do nothing */ };
 
-  beforeEach(()=> {
+  beforeEach(async ()=> {
     getters = {
-      VOLUME: () => 50,
-      MUTED: () => false,
+      GET_VOLUME: () => 50,
+      GET_MUTED: () => false,
     }
     actions = {
       SET_MUTED: () => {/*  */},
@@ -225,25 +225,27 @@ describe('Card video buttons', () => {
     }
   })
 
-  it('check video playToggle buttons', () => {
-    wrapper.find('video.card_video-item').trigger('click')
+  it('check video playToggle button', async () => {
+    await wrapper.setData({ isPlay: true })
+    await wrapper.get('video.card_video-item').trigger('click')
     expect(playToggle).toHaveBeenCalled()
   });
 
   it('check video mutedToggle button', async () => {
+    await wrapper.setData({ isPlay: true })
     await wrapper.find('span.card_video-muted').trigger('click')
     expect(mutedToggle).toHaveBeenCalled()
   });
 
   it('check video setVolume button', async () => {
+    await wrapper.setData({ isPlay: true })
     await wrapper.find('input.card_video-volume').trigger('change')
     expect(setVolume).toHaveBeenCalled()
   });
 
   it('check video playerPlay button', async () => {
-    await wrapper.setData({ isPlay: false })
     await wrapper.find('span.card_video-btn').trigger('click')
-    expect(playerPlay).toHaveBeenCalled()
+    expect(wrapper.vm.isPlay).toBe(true)
   });
 
   it('check video playerPause button', async () => {

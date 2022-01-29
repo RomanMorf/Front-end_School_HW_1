@@ -13,11 +13,11 @@
 </template>
 
 <script>
-
+import Vue from "vue";
 import { mapGetters } from "vuex";
 import Card from "@/components/Card.vue";
 
-export default {
+export default Vue.extend({
   name: "Home-components",
 
   data() {
@@ -26,24 +26,30 @@ export default {
     };
   },
 
+  methods: {
+    async getTrandingFeed() {
+      try {
+        await this.$store.dispatch("GET_TRENDING_FEED");
+        this.loading = false;
+      } catch (error) {
+        this.$store.commit("setError", error);
+        throw error;
+      }
+    }
+  },
+
   components: {
     Card,
   },
 
   async mounted() {
-    try {
-      await this.$store.dispatch("GET_TRENDING_FEED");
-      this.loading = false;
-    } catch (error) {
-      this.$store.commit("setError", error);
-      throw error;
-    }
+    await this.getTrandingFeed()
   },
 
   computed: {
-    ...mapGetters(["VOLUME", "MUTED", "TRENDING"]),
+    ...mapGetters(["GET_VOLUME", "GET_MUTED", "TRENDING"]),
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

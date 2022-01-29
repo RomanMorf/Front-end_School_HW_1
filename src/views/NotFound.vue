@@ -6,28 +6,29 @@
 </template>
 
 <script>
-export default {
-  name: 'not-found',
+import Vue from "vue";
+
+export default Vue.extend({
+  name: "not-found",
   methods: {
     goToMainPage() {
-      this.$router.push('/')
+      this.$router.push("/");
     },
   },
-}
+});
 </script>
 
 <style scoped lang="scss">
-  .not_found {
-    text-align: center;
-    color: rgba(18, 18, 18, 0.75);
+.not_found {
+  text-align: center;
+  color: rgba(18, 18, 18, 0.75);
 
-    h2 {
-      margin: 100px 0;
-    }
-
-    h3 {
-      cursor: pointer;
-    }
-
+  h2 {
+    margin: 100px 0;
   }
+
+  h3 {
+    cursor: pointer;
+  }
+}
 </style>

@@ -95,17 +95,17 @@ describe('Profile component tests', () => {
 
   beforeEach(()=> {
     getters = {
-      VOLUME: () => 30,
-      MUTED: () => false,
+      GET_VOLUME: () => 30,
+      GET_MUTED: () => false,
       INFO: () => info,
       FEED: () => {/* do something */},
       TRENDING: () => trengings,
     }
     actions = {
-    GET_TRENDING_FEED: () => {/* do something */},
-    GET_USER_INFO: () => {/* do something */},
-    GET_USER_FEED: () => {/* do something */},
-    SET_MUTED: () => {/* do something */},
+      GET_TRENDING_FEED: () => {/* do something */},
+      GET_USER_INFO: () => {/* do something */},
+      GET_USER_FEED: () => {/* do something */},
+      SET_MUTED: () => {/* do something */},
     }
     const router = new VueRouter()
     store = new Vuex.Store({ getters, actions })
