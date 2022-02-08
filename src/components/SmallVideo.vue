@@ -1,13 +1,10 @@
 <template>
   <div class="slot_wrapper">
-    <Loader v-if="loading"/>
+    <Loader class="slot_video " v-if="loading" />
     <video
-      @click="playToggle"
       @loadeddata="hideLoader"
-
       @mouseenter="playerPlay"
       @mouseleave="playerPause"
-
       ref="video"
       loop
       class="slot_video"
@@ -17,28 +14,36 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapGetters } from "vuex";
-import playerMixins from "@/mixins/player.mixins.js";
 
-export default {
-  name: "SmallVVideo-component",
+import PlayerMixins from "../mixins/PlayerMixins.vue"
 
-  props: ["video"],
+export default PlayerMixins.extend({
+  name: "SmallVideo-component",
+  data() {
+    return {
+      isPlay: false,
+      isPause: false,
+    }
+  },
+
+  mixins: [PlayerMixins],
+
+  props: {
+    video: {
+      type: Object,
+    },
+  },
 
   computed: {
-    ...mapGetters(["VOLUME", "MUTED"]),
+    ...mapGetters(["GET_VOLUME", "GET_MUTED"]),
   },
 
-  mixins: [playerMixins],
-  
-  mounted() {
-    this.checkParams();
-  },
-};
+});
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .slot {
   &_wrapper {
     height: 300px;
@@ -62,5 +67,4 @@ export default {
     font-weight: bold;
   }
 }
-
 </style>

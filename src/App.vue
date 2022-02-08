@@ -10,11 +10,14 @@
   </div>
 </template>
 
-<script>
-import Header from "@/components/Header.vue";
-import SideBar from "@/components/SideBar.vue";
+<script lang="ts">
+import Vue from "vue";
+import Header from "./components/Header.vue"
+import SideBar from "./components/SideBar.vue"
 
-export default {
+export default Vue.extend({
+  name: 'app-component',
+  
   components: {
     Header,
     SideBar,
@@ -23,7 +26,7 @@ export default {
   async mounted() {
     await this.$store.dispatch("GET_PLAYER_INFO");
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

@@ -3,15 +3,21 @@
     <div class="sidebar_content scroll">
       <ul class="sidebar_list">
         <li class="sidebar_list-item">
-          <img src="@/assets/sidebar_recomment.svg" alt="sidebar recomment">
+          <img
+            src="@/assets/img/sidebar_recomment.svg"
+            alt="sidebar recomment"
+          />
           <span class="sidebar_list-text">Рекомендуем</span>
         </li>
         <li class="sidebar_list-item">
-          <img src="@/assets/sidebar_subscribes.svg" alt="sidebar subscribes">
+          <img
+            src="@/assets/img/sidebar_subscribes.svg"
+            alt="sidebar subscribes"
+          />
           <span class="sidebar_list-text">Подписки</span>
         </li>
-        <li class="sidebar_list-item">
-          <img src="@/assets/sidebar_streem.svg" alt="sidebar streem">
+        <li class="sidebar_list-item" id="hihi">
+          <img src="@/assets/img/sidebar_streem.svg" alt="sidebar streem" />
           <span class="sidebar_list-text">Стрим</span>
         </li>
       </ul>
@@ -19,14 +25,31 @@
         <h4 class="sidebar_recomend-title">Рекомендуемые аккаунты</h4>
         <div class="sidebar_recomend-container">
           <ul class="sidebar_recomend-list">
-            <li class="sidebar_recomend-item" v-for="user in TRENDING.slice(0, 5)" :key="user.id">
-              <a class="sidebar_recomend-link" @click="$router.push('/profile/' + user.authorMeta.name )">
-                <img class="sidebar_recomend-avatar" :src="user.authorMeta.avatar" alt="user avatar">
+            <li
+              class="sidebar_recomend-item"
+              v-for="user in TRENDING.slice(0, 5)"
+              :key="user.id"
+            >
+              <a
+                class="sidebar_recomend-link"
+                @click="goToUserProfile(user.authorMeta.name)"
+              >
+                <img
+                  class="sidebar_recomend-avatar"
+                  :src="user.authorMeta.avatar"
+                  alt="user avatar"
+                />
               </a>
               <div class="sidebar_recomend-info">
-                <h3 @click="$router.push('/profile/' + user.authorMeta.name )">
+                <h3
+                  class="sidebar_recomend-info-link"
+                  @click="goToUserProfile(user.authorMeta.name)"
+                >
                   <span class="verified" v-if="user.authorMeta.verified">
-                    <img src="@/assets/sidebar_recomend-info-verified.svg" alt="profile verified">
+                    <img
+                      src="@/assets/img/sidebar_recomend-info-verified.svg"
+                      alt="profile verified"
+                    />
                   </span>
                   {{ user.authorMeta.name }}
                 </h3>
@@ -49,20 +72,26 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapGetters } from "vuex";
 
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
   name: "Sidebar-component",
   computed: {
     ...mapGetters(["TRENDING"]),
   },
-};
+  methods: {
+    goToUserProfile(userName: string) {
+      this.$router.push("/profile/" + userName);
+    },
+  },
+});
 </script>
 
 <style scoped lang="scss">
 .sidebar {
-
   &_container {
     width: 356px;
   }
@@ -86,7 +115,7 @@ export default {
       height: 1px;
       left: 16px;
       right: 16px;
-      background: rgba(22,24,35,0.12);
+      background: rgba(22, 24, 35, 0.12);
       -webkit-transform: scaleY(0.5);
       -ms-transform: scaleY(0.5);
       transform: scaleY(0.5);
@@ -112,7 +141,6 @@ export default {
   }
 
   &_recomend {
-
     &-container {
       display: flex;
       overflow: hidden;
@@ -136,7 +164,8 @@ export default {
     }
 
     &-info {
-      h3, h4 {
+      h3,
+      h4 {
         margin: 0 0 5px 10px;
         cursor: pointer;
 
@@ -154,9 +183,8 @@ export default {
       }
     }
   }
-
 }
-@media (max-width: 1100px){
+@media (max-width: 1100px) {
   .sidebar {
     &_container {
       width: 250px;
@@ -169,7 +197,7 @@ export default {
   }
 }
 
-@media (max-width: 950px){
+@media (max-width: 950px) {
   .sidebar {
     &_container {
       width: 50px;
@@ -183,22 +211,21 @@ export default {
     &_list-item {
       justify-content: space-around;
     }
-    
+
     &_list-text,
     &_recomend,
     &_hashtags,
-    &_info{
+    &_info {
       display: none;
     }
   }
 }
 
-@media (max-width: 450px){
+@media (max-width: 450px) {
   .sidebar {
     &_container {
       display: none;
     }
   }
 }
-
 </style>
