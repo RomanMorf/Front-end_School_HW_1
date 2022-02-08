@@ -121,22 +121,6 @@ describe('Card component tests', () => {
     expect(wrapper.find('.card_video-muted img').attributes().alt).toBe('muted off')
   });
 
-  it('check muted img when MUTED is true', () => {
-    getters = {
-      GET_VOLUME: () => 50,
-      GET_MUTED: () => true,
-    }
-    actions = {
-      SET_MUTED: jest.fn(),
-      SET_VOLUME: jest.fn(),
-    }
-    store = new Vuex.Store({ getters, actions })
-
-    wrapper = mount(Card, { localVue, store, propsData: {item: item}} )
-  
-    expect(wrapper.find('.card_video-muted img').attributes().alt).toBe('muted on')
-  });
-
   it('check avatar url', () => {
     expect(wrapper.find('.card_avatar').attributes().src).toBe(item.authorMeta.avatar)
   });

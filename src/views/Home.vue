@@ -7,6 +7,7 @@
         v-for="item in TRENDING"
         :key="`${item.createTime}-${item.id}`"
         :item="item"
+        :globalMuted="GET_MUTED"
       />
     </div>
   </div>
@@ -35,7 +36,7 @@ export default Vue.extend({
         this.$store.commit("setError", error);
         throw error;
       }
-    }
+    },
   },
 
   components: {
@@ -43,7 +44,7 @@ export default Vue.extend({
   },
 
   async mounted() {
-    await this.getTrandingFeed()
+    await this.getTrandingFeed();
   },
 
   computed: {
@@ -51,7 +52,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style scoped lang="scss">
-
-</style>

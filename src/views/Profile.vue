@@ -64,18 +64,17 @@
 </template>
 
 <script lang="ts">
+import Vue from "vue";
 import { mapGetters } from "vuex";
 import SmallVideo from "../components/SmallVideo.vue";
-
-import Vue from "vue";
 
 export default Vue.extend({
   name: "Profile-component",
 
   data() {
     return {
-      userInfo: null,
-      userFeed: null,
+      userInfo: {},
+      userFeed: {},
       loading: true,
     };
   },

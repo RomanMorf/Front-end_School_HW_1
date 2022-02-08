@@ -12,19 +12,17 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Header from "./components/Header.vue"
 import SideBar from "./components/SideBar.vue"
 
 export default Vue.extend({
   name: 'app-component',
   
   components: {
-    Header,
     SideBar,
   },
 
   async mounted() {
-    await this.$store.dispatch("GET_PLAYER_INFO");
+    await (this as any).$store.dispatch("GET_PLAYER_INFO");
   },
 });
 </script>
@@ -58,5 +56,6 @@ export default Vue.extend({
     }
   }
 }
+
 
 </style>

@@ -84,7 +84,7 @@ export default Vue.extend({
   },
   methods: {
     goToUserProfile(userName: string) {
-      this.$router.push("/profile/" + userName);
+      (this as any).$router.push("/profile/" + userName);
     },
   },
 });

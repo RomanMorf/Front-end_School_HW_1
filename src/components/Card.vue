@@ -61,7 +61,7 @@
           ></video>
           <span @click="mutedToggle" class="card_video-muted">
             <img
-              v-if="GET_MUTED"
+              v-if="globalMuted"
               src="@/assets/img/card_player_muted-on.svg"
               alt="muted on"
             />
@@ -117,8 +117,16 @@
 
 <script lang="ts">
 import { mapGetters } from "vuex";
-
 import PlayerMixins from "../mixins/PlayerMixins.vue"
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    htmlElem: HTMLElement;
+    startStopPlay: () => void;
+  }
+  type htmlElem = HTMLElement
+};  
+
 
 export default PlayerMixins.extend({
   name: "Card-component",
@@ -126,6 +134,9 @@ export default PlayerMixins.extend({
   props: {
     item: {
       type: Object,
+    },
+    globalMuted: {
+      type: Boolean,
     },
   },
 
@@ -137,16 +148,14 @@ export default PlayerMixins.extend({
       muted: false,
       htmlElem: null,
       isPlay: false,
-      // isPause: false,
-      // loading: true,
     };
   },
 
   methods: {
-    startStopPlay() {
+    startStopPlay():void {
       const startStopLine = window.innerHeight * 0.25 + window.scrollY;
-      const elemTop = this.htmlElem.offsetTop;
-      const elemHeigth = this.htmlElem.offsetHeight;
+      const elemTop = (this as any).htmlElem.offsetTop;
+      const elemHeigth = (this as any).htmlElem.offsetHeight;
 
       if (startStopLine < elemTop && 
           startStopLine < elemTop + elemHeigth
@@ -171,16 +180,15 @@ export default PlayerMixins.extend({
       const arr = this.item.text.split("#");
       return arr[0];
     },
-    ...mapGetters(["VOLUME", "GET_MUTED"]),
   },
 
   mounted() {
     this.checkParams();
     const html = document.querySelector(`#card-${this.item.id}`);
-    this.htmlElem = html
+    (this as any).htmlElem = html
 
     document.addEventListener("scroll", () => {
-      this.startStopPlay();
+      (this as any).startStopPlay();
     });
   },
 });
